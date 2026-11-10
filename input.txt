@@ -1,1 +1,25 @@
-I might store the survey itself or responses in here at some point
+(I might store the survey itself or responses in here at some point)
+
+
+1. My gap identifier and survey changes use listener, apparently in the Observer pattern. 
+Basically, this means it notifies you when certain objects get updated. This is relevant
+in my gap identifier especially because it's whole job is to catalogue changes and 
+discrepencies, making sure that whatever doesnt align with survey replies is accounted for. It also
+Overrides responseAdded() to provide its own message. 
+
+2. I'm thinking of this as a website. there will be a page where you can potentially enter your zipcode and 
+answer the survey. There would ideally already be a database of community resources that we could
+compare those to. Then, it would return almost a heat map of the most commonly cited complaints. 
+I'm mthinking of using HTML, react, and/or swing. I'd like to use google stitch but I'm not
+sure if that is allowed. 
+
+3. I'm using the observer pattern. My gapID automatically listens and checks for gaps
+with every survey, which is what it is designed to do. This is the preffered design instead
+of having to do a call every time. 
+
+4. I checked in Intellej and I have 100% test coverage. 
+
+5. EVENT DRIVEN design
+The event is when a user submits a curvey through communityNeeds. The surveyInput class has listeners
+and notifies them when a response is added. Then, gapID checks for unmet needs. It will work
+the same when I have a GUI, with auto updates as intended. 
