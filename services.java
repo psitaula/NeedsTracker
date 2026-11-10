@@ -1,3 +1,5 @@
+//all services are assumed true unless surveys say otherwise for now
+
 
 public class services {
     private boolean housing = true;
