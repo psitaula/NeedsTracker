@@ -1,2 +1,2 @@
 # NeedsTracker
-I want to track community needs here and compare it to what communities actually have. Its all in java so far. 
+I want to track community needs here and compare it to what communities actually have. Its all in java so far. This project is scoped down to three needs;housing, food, and electricity. I use JUnit 5 and IntelliJ to check my test coverage. 
