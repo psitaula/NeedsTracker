@@ -1,5 +1,6 @@
 //just remembering how to use
 import javax.swing.*;
+import java.util.Scanner;
 
 
 
@@ -29,13 +30,12 @@ import javax.swing.*;
         );
         frame.setVisible(true);
 
+        b1.addActionListener(
 
-
-
-
-
-
-
+            e->{
+                Scanner survey = new Scanner("what is the biggest concern in your community?");
+            }
+        );
 
 
     });
