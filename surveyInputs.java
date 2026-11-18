@@ -2,23 +2,41 @@
 //that allows this to be like this but its okay for now
 
 //now we need the survey 
-class surveyInput{
-   private ArrayList<String>responses = new ArrayList<>();
-    ArrayList<Listener> listen = new ArrayList<>();
+import java.util.ArrayList;
 
-void addListener(Listener listener) {
-    listen.add(listener);
-}
+public class surveyInput {
+    private ArrayList<String> responses = new ArrayList<>();
+    private ArrayList<Listener> listen = new ArrayList<>();
 
-void addResponse(String response) {
-    responses.add(response);
-
-    for (Listener listener : listen) {
-        listener.responseAdded(response);
+    public void addListener(Listener listener) {
+        listen.add(listener);
     }
-}
-    
-    ArrayList<String> getResponse(){
-        return responses;
+
+    public void addResponse(String response) {
+        if (response == null || response.trim().isEmpty()) {
+            throw new IllegalArgumentException("Enter a response.");
+        }
+
+        responses.add(response);
+
+        for (Listener listener : listen) {
+            listener.responseAdded(response);
+        }
+    }
+
+    public void removeResponse(int index) {
+        if (index < 0 || index >= responses.size()) {
+            throw new IllegalArgumentException("Select a response.");
+        }
+
+        responses.remove(index);
+    }
+
+    public void clearResponses() {
+        responses.clear();
+    }
+
+    public ArrayList<String> getResponse() {
+        return new ArrayList<>(responses);
     }
 }

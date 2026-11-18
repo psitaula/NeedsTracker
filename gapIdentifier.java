@@ -3,35 +3,42 @@
 //like supply chain type problem or lack of resources. probably heavily gonna use listener
 
 
-class gapIdentifier implements Listener{
+
+public class gapIdentifier implements Listener {
     private services communityServices;
 
-    public gapIdentifier(services communityServices){
+    public gapIdentifier(services communityServices) {
         this.communityServices = communityServices;
     }
 
-   @Override 
-    public void responseAdded(String response){
-        System.out.println("Looking for gaps...");
+    @Override
+    public void responseAdded(String response) {
         check(response);
     }
 
-    //All communities are assumed to have these things. If people in the 
-    //surveys say they don't, then it is set to false. 
-public void check(String response) {
-    if (response.contains("housing")) {
-        communityServices.setHousing(false);
+    public void check(String response) {
+        response = response.toLowerCase();
+
+        if (response.contains("housing")) {
+            communityServices.setHousing(false);
+        }
+
+        if (response.contains("food")) {
+            communityServices.setFood(false);
+        }
+
+        if (response.contains("electric")) {
+            communityServices.setElectric(false);
+        }
     }
 
-    if (response.contains("food")) {
-        communityServices.setFood(false);
+    public void updateGaps(surveyInput survey) {
+        communityServices.setHousing(true);
+        communityServices.setFood(true);
+        communityServices.setElectric(true);
+
+        for (String response : survey.getResponse()) {
+            check(response);
+        }
     }
-
-    if (response.contains("electric")) {
-       communityServices.setElectric(false);
-    }
-
-}
-
-
 }

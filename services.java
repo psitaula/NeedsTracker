@@ -1,7 +1,7 @@
 //all services are assumed true unless surveys say otherwise for now
 
-
 public class services {
+
     private boolean housing = true;
     private boolean food = true;
     private boolean electric = true;
@@ -25,19 +25,15 @@ public class services {
     }
 
     public void setHousing(boolean housing) {
-    this.housing = housing;
+        this.housing = housing;
     }
     public void setFood(boolean food) {
-    this.food = food;
+        this.food = food;
     }
 
     public void setElectric(boolean electric) {
-    this.electric = electric;
+        this.electric = electric;
     }
 
 
-
-
-
-}
 
