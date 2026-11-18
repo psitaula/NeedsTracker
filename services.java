@@ -34,6 +34,7 @@ public class services {
     public void setElectric(boolean electric) {
         this.electric = electric;
     }
+}
 
 
 
